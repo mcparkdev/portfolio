@@ -50,7 +50,10 @@ export default function SkillItem(props) {
       <Subcontent title="Tools/Softwares" list={props.tools} />
       <DownloadContent title="Academic Projects" list={props.projects} />
       <div className="skills-comment">
-        ** Click on each project to view documents
+        **
+        {props.language === "en" && "Click on each project to view documents"}
+        {props.language === "spa" &&
+          "Haga clic en los proyectos para los documentos"}
       </div>
     </div>
   );

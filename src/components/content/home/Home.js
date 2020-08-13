@@ -53,7 +53,7 @@ export default function Home(props) {
         },
         developer: {
           prefix: "Full Stack",
-          name: "Desarrolador",
+          name: "Desarrollador",
         },
       },
     },

@@ -52,14 +52,14 @@ export default function Sider(props) {
         {language === "spa" && (
           <>
             {" "}
-            Hola, Soy Min Chang Park y soy Coreano-Colombiano. Actualmente este
+            Hola, Soy Min Chang Park y soy Coreano-Colombiano. Actualmente estoy
             cursando el séptimo semestre de pregrado de Ingeniería Industrial y
             siempre estoy dispuesto a seguir mejorando mis habilidades.
             <br />
             <br />
-            Durante mi carrera, me he dado cuenta que mis intereses se basan en
-            la programación, de modo que desde este año, he empezado a extender
-            mi carrera como un desarrollado de Web.
+            Durante mi carrera, me he dado cuenta que mis intereses se han
+            basado en la programación, de modo que desde este año, he empezado a
+            extender mi carrera como un desarrollado de Web.
             <br />
             <br />
           </>
@@ -108,7 +108,7 @@ export default function Sider(props) {
         },
         resume: {
           name: "Hoja de vida",
-          content: "Disponible pronto",
+          content: "¡Disponible pronto!",
         },
       },
       clipboard: {

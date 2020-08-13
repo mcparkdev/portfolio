@@ -145,16 +145,16 @@ export default function Skills(props) {
       <div className="skills-bg"></div>
       <div className="content-header">{content.title}</div>
       <div className="skills-content">
-        <SkillItem {...content.skills.organization}>
+        <SkillItem {...props} {...content.skills.organization}>
           <ClusterOutlined />
         </SkillItem>
-        <SkillItem {...content.skills.logistics}>
+        <SkillItem {...props} {...content.skills.logistics}>
           <BranchesOutlined />
         </SkillItem>
-        <SkillItem {...content.skills.statistics}>
+        <SkillItem {...props} {...content.skills.statistics}>
           <RadarChartOutlined />
         </SkillItem>
-        <SkillItem {...content.skills.financing}>
+        <SkillItem {...props} {...content.skills.financing}>
           <LineChartOutlined />
         </SkillItem>
       </div>
