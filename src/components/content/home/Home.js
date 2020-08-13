@@ -29,6 +29,118 @@ export default function Home(props) {
     if (props.isSiderVisible) return contentStyle;
     else return initialContentStyle;
   };
+
+  const contentByLanguage = {
+    en: {
+      greeting: "Hi, I'm Min Chang Park",
+      jobs: {
+        engineer: {
+          prefix: "Industrial",
+          name: "Engineer",
+        },
+        developer: {
+          prefix: "Full Stack",
+          name: "Developer",
+        },
+      },
+    },
+    spa: {
+      greeting: "Hola, soy Min Chang Park",
+      jobs: {
+        engineer: {
+          prefix: "Industrial",
+          name: "Ingeniero",
+        },
+        developer: {
+          prefix: "Full Stack",
+          name: "Desarrolador",
+        },
+      },
+    },
+  };
+  const { language } = props;
+  const content = contentByLanguage[language];
+
+  const Job = () => {
+    return (
+      <>
+        {language === "en" && (
+          <>
+            <div className="home-job">
+              {props.width > 768 && (
+                <div style={{ marginRight: 16 }}>
+                  {content.jobs.engineer.prefix}
+                </div>
+              )}
+              <div style={{ color: "#1890ff" }}>
+                {content.jobs.engineer.name},
+              </div>
+            </div>
+            <div className="home-job">
+              {props.width > 768 && (
+                <div style={{ marginRight: 16 }}>
+                  {content.jobs.developer.prefix}
+                </div>
+              )}
+              <div style={{ color: "#1890ff" }}>
+                {content.jobs.developer.name}
+              </div>
+            </div>
+          </>
+        )}
+        {language === "spa" && (
+          <>
+            <div className="home-job">
+              <div style={{ color: "#1890ff", marginRight: 16 }}>
+                {content.jobs.engineer.name}
+              </div>
+              {props.width > 768 && <div>{content.jobs.engineer.prefix},</div>}
+            </div>
+            <div className="home-job">
+              <div style={{ marginRight: 16, color: "#1890ff" }}>
+                {content.jobs.developer.name}
+              </div>
+              {props.width > 768 && <div>{content.jobs.developer.prefix}</div>}
+            </div>
+          </>
+        )}
+      </>
+    );
+  };
+  const Description = () => (
+    <>
+      {language === "en" && (
+        <>
+          I like to <strong>create</strong> and <strong>solve</strong>. My major
+          is <strong>Production & Logistics</strong> and my programming abilites
+          extend from <strong>Data Science</strong> (R & Python) to{" "}
+          <strong>Web Development</strong> (full-stack) to give the best user
+          experience.
+        </>
+      )}
+      {language === "spa" && (
+        <>
+          Tengo pasión por <strong>crear</strong> y <strong>solucionar</strong>.
+          Mi enfoque es <strong>Producción & Logística</strong> y mis
+          habilidades de programación van desde <strong>Data Science</strong> (R
+          & Python) hasta <strong>Desarrollo Web</strong> (full-stack) para dar
+          el mejor experiencia de usuario.
+        </>
+      )}
+    </>
+  );
+  const EngineerButton = () => (
+    <>
+      {language === "en" && <>Industrial Engineer</>}
+      {language === "spa" && <>Ingeniero Industrial</>}
+    </>
+  );
+  const DeveloperButton = () => (
+    <>
+      {language === "en" && <>Full Stack Developer</>}
+      {language === "spa" && <>Desarrollador Full Stack</>}
+    </>
+  );
   return (
     <motion.div
       variants={stagger}
@@ -41,34 +153,19 @@ export default function Home(props) {
         Hi, I'm Min Chang Park
       </motion.div>
       <motion.div {...motionProps} className="home-jobs">
-        <div className="home-job">
-          {props.width > 768 && (
-            <div style={{ marginRight: 16 }}>Industrial</div>
-          )}
-          <div style={{ color: "#1890ff" }}>Engineer,</div>
-        </div>
-        <div className="home-job">
-          {props.width > 768 && (
-            <div style={{ marginRight: 16 }}>Full Stack</div>
-          )}
-          <div style={{ color: "#1890ff" }}>Developer</div>
-        </div>
+        <Job />
       </motion.div>
       <motion.div {...motionProps} className="home-description">
-        I like to <strong>create</strong> and <strong>solve</strong>. My major
-        is <strong>Production & Logistics</strong> and my programming abilites
-        extend from <strong>Data Science</strong> (R & Python) to{" "}
-        <strong>Web Development</strong> (full-stack) to give the best user
-        experience.
+        <Description />
       </motion.div>
       <motion.div {...motionProps} className="home-links">
         <LinkButton to="/engineer">
           <FundProjectionScreenOutlined />
-          Industrial Engineer
+          <EngineerButton />
         </LinkButton>
         <LinkButton to="/developer">
           <DesktopOutlined />
-          Full-stack Developer
+          <DeveloperButton />
         </LinkButton>
       </motion.div>
     </motion.div>

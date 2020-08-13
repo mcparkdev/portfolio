@@ -10,10 +10,13 @@ import Sider from "./components/sider/Sider";
 
 function App() {
   const { height, width } = useWindowSize();
+  const [language, setLanguage] = useState("en");
   const [isSiderVisible, setIsSiderVisible] = useState(false);
   const appProps = {
     height,
     width,
+    language,
+    setLanguage,
     isSiderVisible,
     setIsSiderVisible,
   };

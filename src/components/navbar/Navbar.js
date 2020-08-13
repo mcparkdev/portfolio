@@ -4,6 +4,16 @@ import { NavLink } from "react-router-dom";
 import { UserOutlined } from "@ant-design/icons";
 
 export default function Navbar(props) {
+  const contentByLanguage = {
+    en: {
+      about: "About me",
+    },
+    spa: {
+      about: "Sobre mi",
+    },
+  };
+  const { language } = props;
+  const content = contentByLanguage[language];
   return (
     <div
       className="nav"
@@ -19,7 +29,7 @@ export default function Navbar(props) {
           className="sider-button"
           onClick={() => props.setIsSiderVisible(!props.isSiderVisible)}
         >
-          About me <UserOutlined />
+          {content.about} <UserOutlined />
         </div>
       </div>
     </div>

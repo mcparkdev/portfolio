@@ -17,7 +17,7 @@ const { TabPane } = Tabs;
 const { Paragraph } = Typography;
 
 function callback(key) {
-  console.log(key);
+  // console.log(key);
 }
 
 export default function Sider(props) {
@@ -33,7 +33,97 @@ export default function Sider(props) {
     else setSiderTransform("translateX(-100vw)");
   }, [props.width, props.isSiderVisible]);
   // console.log(props);
+  const about = (language) => {
+    return (
+      <>
+        {language === "en" && (
+          <>
+            {" "}
+            Hi, I am Min Chang Park and I'm both Korean and Colombian. I'm
+            currently at the 4th year of bachelor in Industrial Engineering in
+            the University of los Andes and I always look forward to keep
+            improving my abilities. <br />
+            <br /> Throughout my career, I noticed my interests were based on
+            programming. Therefore, since early 2020s, I've started to broaden
+            my career as a developer. <br />
+            <br />
+          </>
+        )}
+        {language === "spa" && (
+          <>
+            {" "}
+            Hola, Soy Min Chang Park y soy Coreano-Colombiano. Actualmente este
+            cursando el séptimo semestre de pregrado de Ingeniería Industrial y
+            siempre estoy dispuesto a seguir mejorando mis habilidades.
+            <br />
+            <br />
+            Durante mi carrera, me he dado cuenta que mis intereses se basan en
+            la programación, de modo que desde este año, he empezado a extender
+            mi carrera como un desarrollado de Web.
+            <br />
+            <br />
+          </>
+        )}
+      </>
+    );
+  };
 
+  const contentByLanguage = {
+    en: {
+      language: {
+        en: "English",
+        spa: "Spanish",
+      },
+
+      tabs: {
+        about: {
+          name: "About me",
+          content: about("en"),
+        },
+        contact: {
+          name: "Contact",
+        },
+        resume: {
+          name: "Resume",
+          content: "Available soon",
+        },
+      },
+      clipboard: {
+        hover: "Copy",
+        click: "Copied to clipboard",
+      },
+    },
+    spa: {
+      language: {
+        en: "Inglés",
+        spa: "Español",
+      },
+      tabs: {
+        about: {
+          name: "Sobre mi",
+          content: about("spa"),
+        },
+        contact: {
+          name: "Contacto",
+        },
+        resume: {
+          name: "Hoja de vida",
+          content: "Disponible pronto",
+        },
+      },
+      clipboard: {
+        hover: "Copiar",
+        click: "Copiado a tus portapapeles",
+      },
+    },
+  };
+
+  const { language } = props;
+  const content = contentByLanguage[language];
+  const copyMessage = () => {
+    const copy = content.clipboard;
+    return { tooltips: [copy.hover, copy.click] };
+  };
   return (
     <AnimatePresence exitBeforeEnter>
       <div
@@ -65,12 +155,13 @@ export default function Sider(props) {
                 variants={fadeIn(0.6, 0, 60, 0.4)}
                 className="sider-language"
               >
-                {/* <div className="sider-language-header">
-                  Supported Languages:
-                </div> */}
                 <div className="sider-language-content">
-                  <div>English</div>
-                  <div>Spanish</div>
+                  <div onClick={() => props.setLanguage("en")}>
+                    {content.language.en}
+                  </div>
+                  <div onClick={() => props.setLanguage("spa")}>
+                    {content.language.spa}
+                  </div>
                 </div>
               </motion.div>
               <motion.div
@@ -81,28 +172,14 @@ export default function Sider(props) {
                 className="sider-content-tabs"
               >
                 <Tabs defaultActiveKey="1" onChange={callback}>
-                  <TabPane tab="About me" key="1">
-                    Hi, I am Min Chang Park and I'm both Korean and Colombian.
-                    I'm currently at the 4th year of bachelor in Industrial
-                    Engineering in the University of los Andes and I always look
-                    forward to keep improving my abilities. <br />
-                    <br />
-                    Throughout my career, I noticed my interests were based on
-                    programming. Therefore, since early 2020s, I've started to
-                    broaden my career as a developer. <br />
-                    <br />
+                  <TabPane tab={content.tabs.about.name} key="1">
+                    {content.tabs.about.content}
                   </TabPane>
-                  <TabPane tab="Contact" key="2">
-                    <Paragraph
-                      copyable={{ tooltips: ["Copy", "Copied to clipboard"] }}
-                    >
+                  <TabPane tab={content.tabs.contact.name} key="2">
+                    <Paragraph copyable={copyMessage}>
                       <MailOutlined /> mc.park@uniandes.edu.co
                     </Paragraph>
-                    <Paragraph
-                      copyable={{
-                        tooltips: ["Copy", "Copied to clipboard"],
-                      }}
-                    >
+                    <Paragraph copyable={copyMessage}>
                       <a
                         target="_blank"
                         rel="noopener noreferrer"
@@ -111,11 +188,7 @@ export default function Sider(props) {
                         <WhatsAppOutlined /> (+57) 320 416 4939
                       </a>{" "}
                     </Paragraph>
-                    <Paragraph
-                      copyable={{
-                        tooltips: ["Copy", "Copied to clipboard"],
-                      }}
-                    >
+                    <Paragraph copyable={copyMessage}>
                       <a
                         target="_blank"
                         rel="noopener noreferrer"
@@ -125,8 +198,8 @@ export default function Sider(props) {
                       </a>
                     </Paragraph>
                   </TabPane>
-                  <TabPane tab="Resume" key="3">
-                    Available soon!
+                  <TabPane tab={content.tabs.resume.name} key="3">
+                    {content.tabs.resume.content}
                   </TabPane>
                 </Tabs>
               </motion.div>

@@ -4,28 +4,16 @@ import Home from "./home/Home";
 import { Route, Switch, useLocation } from "react-router-dom";
 import Engineer from "./engineer/Engineer";
 import Developer from "./developer/Developer";
-import stagger from "../animation/Stagger";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import Projects from "./engineer/projects/Projects";
+
 export default function Content(props) {
   const location = useLocation();
   return (
-    <motion.div
-      variants={stagger}
-      // exit={{ opacity: 0 }}
-      // initial="initial"
-      // animate="animate"
+    <div
       className="content"
       style={props.isSiderVisible ? { filter: "brightness(50%)" } : {}}
     >
-      {/* <div
-        className="content-ghost"
-        style={
-          props.isSiderVisible
-            ? { transform: "translateX(0)" }
-            : { transform: "translateX(-40vw)" }
-        }
-      /> */}
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
           <Route
@@ -91,6 +79,6 @@ export default function Content(props) {
           />
         </Switch>
       </AnimatePresence>
-    </motion.div>
+    </div>
   );
 }
