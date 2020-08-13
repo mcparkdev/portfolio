@@ -1,0 +1,78 @@
+.powerpoint {
+  width: calc(50vh * 1.65);
+  height: calc(50vh);
+}
+
+.engineer-projects-content-header {
+  background: #1a1a1a;
+  color: white;
+}
+
+#projects {
+  transform: translateY(-53px);
+}
+
+@media screen and (max-width: 768px) {
+  .powerpoint {
+    width: 80vw;
+    height: calc(80vw / 1.65);
+  }
+}
+
+.carousel-slide {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 82px - 53px);
+  color: white;
+  line-height: 160px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* background: #f7f9fa; */
+  background: #1a1a1a;
+}
+
+.carousel-slide-title {
+  font-size: 24px;
+  font-weight: bolder;
+  height: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-slide-description {
+  font-size: 16px;
+  height: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.carousel-slide-media {
+  display: flex;
+  height: fit-content;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-slide-action {
+  display: flex;
+  width: 40vw;
+  justify-content: space-between;
+  height: 2em;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.carousel-slide-footer {
+  margin-top: 32px;
+  font-size: 12px;
+  height: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

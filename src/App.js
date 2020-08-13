@@ -1,24 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Navbar from "./components/navbar/Navbar";
+import Content from "./components/content/Content";
+import useWindowSize from "./WindowDimensions";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+// import { AnimatePresence } from "framer-motion";
+import "antd/dist/antd.css";
+import Sider from "./components/sider/Sider";
 
 function App() {
+  const { height, width } = useWindowSize();
+  const [isSiderVisible, setIsSiderVisible] = useState(false);
+  const appProps = {
+    height,
+    width,
+    isSiderVisible,
+    setIsSiderVisible,
+  };
+  // console.log(height, width);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <AnimatePresence exitBeforeEnter> */}
+      <Router>
+        <Route exact path="/">
+          <Redirect to="/home" />
+        </Route>
+        <Navbar {...appProps} />
+        <Content {...appProps} />
+        <Sider {...appProps} />
+        {/* {isSiderVisible && } */}
+      </Router>
+      {/* </AnimatePresence> */}
     </div>
   );
 }

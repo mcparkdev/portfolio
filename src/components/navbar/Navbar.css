@@ -1,0 +1,90 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0vw;
+  position: fixed;
+  width: -webkit-fill-available;
+  background: white;
+  /* box-shadow: 0px 0px 4px 0.5px rgba(0, 0, 0, 0.5); */
+  top: 0;
+  /* transition-delay: 3s; */
+  transition: all 0.3s ease-in-out;
+  z-index: 10;
+}
+
+.nav-left {
+  margin-left: 10vw;
+}
+
+.nav-right {
+  margin-right: 10vw;
+}
+
+.nav-left a,
+.nav-right a {
+  text-decoration: none;
+  color: #1a1a1a;
+}
+
+.nav-left-title {
+  font-size: 24px;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.nav-left-title:hover {
+  cursor: pointer;
+  color: #1890ff;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.nav-right-item {
+  margin: 0px 8px;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.nav-right-item:hover {
+  cursor: pointer;
+  color: #1890ff;
+}
+
+.sider-button {
+  height: 36px;
+  width: fit-content;
+  padding: 0 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  transition: all 0.15s ease-in-out;
+}
+.sider-button svg {
+  margin-left: 8px;
+}
+
+.sider-button:hover {
+  background-color: #f7f9fa;
+  /* color: #1890ff; */
+  cursor: pointer;
+}
+
+.sider-button:active {
+  background-color: #ccc;
+}
