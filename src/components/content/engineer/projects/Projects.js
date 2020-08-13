@@ -17,7 +17,12 @@ export default function Projects(props) {
           <div className="carousel-slide-title">{props.title}</div>
           <div className="carousel-slide-description">{props.description}</div>
           <div className="content-slide-media powerpoint">{props.children}</div>
-          <div className="carousel-slide-footer">Slide for more</div>
+          <div className="carousel-slide-footer">
+            <div>There may be some loading time</div>
+            <div>
+              <strong>Slide for more</strong>
+            </div>
+          </div>
         </div>
       </div>
     );

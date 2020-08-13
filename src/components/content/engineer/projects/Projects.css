@@ -71,8 +71,18 @@
 .carousel-slide-footer {
   margin-top: 32px;
   font-size: 12px;
-  height: 1em;
+  height: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-slide-footer div {
+  width: inherit;
+  height: inherit;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 8px 0;
 }
