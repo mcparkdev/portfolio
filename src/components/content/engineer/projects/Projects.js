@@ -59,7 +59,7 @@ export default function Projects(props) {
           description: "Enero 2020 ~ Junio 2020",
         },
         probability: {
-          title: "Análisis de Hacinimiento de biblioteca",
+          title: "Análisis de Hacinamiento de Biblioteca",
           description: "Enero 2018 ~ Mayo 2018",
         },
       },
