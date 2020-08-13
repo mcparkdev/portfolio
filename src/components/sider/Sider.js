@@ -1,12 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { CloseOutlined } from "@ant-design/icons";
+import {
+  CloseOutlined,
+  WhatsAppOutlined,
+  MailOutlined,
+  GithubOutlined,
+} from "@ant-design/icons";
 import { Tabs } from "antd";
 import { motion, AnimatePresence } from "framer-motion";
 import fadeIn from "../animation/Fade";
 import stagger from "../animation/Stagger";
+import { Typography } from "antd";
+
 import "./Sider.css";
 
 const { TabPane } = Tabs;
+const { Paragraph } = Typography;
 
 function callback(key) {
   console.log(key);
@@ -79,18 +87,46 @@ export default function Sider(props) {
                     Engineering in the University of los Andes and I always look
                     forward to keep improving my abilities. <br />
                     <br />
+                    Throughout my career, I noticed my interests were based on
+                    programming. Therefore, since early 2020s, I've started to
+                    broaden my career as a developer. <br />
+                    <br />
                   </TabPane>
                   <TabPane tab="Contact" key="2">
-                    Email: mc.park@uniandes.edu.co <br />
-                    Phone Number: (+57) 320 416 4939 <br />
-                    Github: https://github.com/mcparkdev
+                    <Paragraph
+                      copyable={{ tooltips: ["Copy", "Copied to clipboard"] }}
+                    >
+                      <MailOutlined /> mc.park@uniandes.edu.co
+                    </Paragraph>
+                    <Paragraph
+                      copyable={{
+                        tooltips: ["Copy", "Copied to clipboard"],
+                      }}
+                    >
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://api.whatsapp.com/send?phone=573204164939&text=&source=&data=&app_absent="
+                      >
+                        <WhatsAppOutlined /> (+57) 320 416 4939
+                      </a>{" "}
+                    </Paragraph>
+                    <Paragraph
+                      copyable={{
+                        tooltips: ["Copy", "Copied to clipboard"],
+                      }}
+                    >
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://github.com/mcparkdev"
+                      >
+                        <GithubOutlined /> https://github.com/mcparkdev
+                      </a>
+                    </Paragraph>
                   </TabPane>
                   <TabPane tab="Resume" key="3">
                     Available soon!
-                  </TabPane>
-                  <TabPane tab="This website" key="4">
-                    This website was made with React.js. <br />
-                    The code source can be found on my github repository <br />
                   </TabPane>
                 </Tabs>
               </motion.div>

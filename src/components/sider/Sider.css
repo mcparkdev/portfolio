@@ -50,3 +50,8 @@
 .sider-language-content div:hover {
   color: #1890ff;
 }
+
+.ant-typography a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.65);
+}
