@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 export default function SkillItem(props) {
   const Subcontent = (props) => {
-    // console.log(props.list);
+    // console.log(props);
     return (
       <div className="skills-subcontent">
         <div className="skills-subtitle">{props.title}</div>

@@ -25,7 +25,7 @@ export default function Skills(props) {
           description:
             "I design organizational structures and strategies to maximize the organization's performance",
           topics: ["Organization Strategy", "System Dynamics"],
-          tools: { description: ["Vensim"] },
+          tools: ["Vensim"],
           projects: [
             { name: "Uniumbrella", file: "Uniumbrella.pptx" },
             { name: "Organ Transplant Dynamics", file: "Organ Dynamics.docx" },
