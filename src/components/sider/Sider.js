@@ -39,27 +39,37 @@ export default function Sider(props) {
         {language === "en" && (
           <>
             {" "}
-            Hi, I am Min Chang Park and I'm both Korean and Colombian. I'm
-            currently at the 4th year of bachelor in Industrial Engineering in
-            the University of los Andes and I always look forward to keep
-            improving my abilities. <br />
+            Hi, I am Min Chang Park and I'm currently at the 4th year of
+            bachelor in Industrial Engineering in the University of los Andes
+            and I always look forward to keep improving my abilities. My
+            interests as an Engineer are principally focused on{" "}
+            <strong>Logistics</strong> and <strong>Statistics</strong>.
+            <br />
             <br /> Throughout my career, I noticed my interests were based on
             programming. Therefore, since early 2020s, I've started to broaden
-            my career as a developer. <br />
+            my career as a developer. I'm aiming to be able to improve my
+            front-end skills in the latter and make a whole new awesome,
+            unforgettable portfolio.
+            <br />
             <br />
           </>
         )}
         {language === "spa" && (
           <>
             {" "}
-            Hola, Soy Min Chang Park y soy Coreano-Colombiano. Actualmente estoy
-            cursando el séptimo semestre de pregrado de Ingeniería Industrial y
-            siempre estoy dispuesto a seguir mejorando mis habilidades.
+            Hola, Soy Min Chang Park y actualmente estoy cursando el séptimo
+            semestre de pregrado de Ingeniería Industrial. Siempre estoy
+            dispuesto a seguir mejorando mis habilidades. Mis intereses como
+            ingeniero están concentrados en la <strong>
+              Logísticas
+            </strong> y <strong>Estadística</strong>.
             <br />
             <br />
             Durante mi carrera, me he dado cuenta que mis intereses se han
             basado en la programación, de modo que desde este año, he empezado a
-            extender mi carrera como un desarrollado de Web.
+            extender mi carrera como un desarrollador de Web. Busco mejorar mis
+            habilidades de front-end próximamente y recrear un nuevo portafolio
+            asombroso e inolvidable.
             <br />
             <br />
           </>

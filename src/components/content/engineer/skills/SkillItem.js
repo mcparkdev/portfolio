@@ -46,9 +46,9 @@ export default function SkillItem(props) {
         {props.title}
       </div>
       <div className="skills-description">{props.description}</div>
-      <Subcontent title="Relevant Topics" list={props.topics} />
-      <Subcontent title="Tools/Softwares" list={props.tools} />
-      <DownloadContent title="Academic Projects" list={props.projects} />
+      <Subcontent title={props.topicsSubTitle} list={props.topics} />
+      <Subcontent title={props.toolsSubTitle} list={props.tools} />
+      <DownloadContent title={props.projectsSubTitle} list={props.projects} />
       <div className="skills-comment">
         **
         {props.language === "en" && "Click on each project to view documents"}

@@ -14,13 +14,18 @@ export default function Skills(props) {
   const contentByLanguage = {
     en: {
       title: "Skills I've developed",
+      subtitles: {
+        topicsSubTitle: "Relevant Topics",
+        toolsSubTitle: "Tools/Softwares",
+        projectsSubTitle: "Academic Projects",
+      },
       skills: {
         organization: {
           title: "Organization",
           description:
             "I design organizational structures and strategies to maximize the organization's performance",
           topics: ["Organization Strategy", "System Dynamics"],
-          tools: ["Vensim"],
+          tools: { description: ["Vensim"] },
           projects: [
             { name: "Uniumbrella", file: "Uniumbrella.pptx" },
             { name: "Organ Transplant Dynamics", file: "Organ Dynamics.docx" },
@@ -66,6 +71,11 @@ export default function Skills(props) {
     },
     spa: {
       title: "Habilidades que he desarrollado",
+      subtitles: {
+        topicsSubTitle: "Temas relevantes",
+        toolsSubTitle: "Herramients/Softwares",
+        projectsSubTitle: "Proyectos Académicos",
+      },
       skills: {
         organization: {
           title: "Organizaciones",
@@ -145,16 +155,32 @@ export default function Skills(props) {
       <div className="skills-bg"></div>
       <div className="content-header">{content.title}</div>
       <div className="skills-content">
-        <SkillItem {...props} {...content.skills.organization}>
+        <SkillItem
+          {...props}
+          {...content.subtitles}
+          {...content.skills.organization}
+        >
           <ClusterOutlined />
         </SkillItem>
-        <SkillItem {...props} {...content.skills.logistics}>
+        <SkillItem
+          {...props}
+          {...content.subtitles}
+          {...content.skills.logistics}
+        >
           <BranchesOutlined />
         </SkillItem>
-        <SkillItem {...props} {...content.skills.statistics}>
+        <SkillItem
+          {...props}
+          {...content.subtitles}
+          {...content.skills.statistics}
+        >
           <RadarChartOutlined />
         </SkillItem>
-        <SkillItem {...props} {...content.skills.financing}>
+        <SkillItem
+          {...props}
+          {...content.subtitles}
+          {...content.skills.financing}
+        >
           <LineChartOutlined />
         </SkillItem>
       </div>
